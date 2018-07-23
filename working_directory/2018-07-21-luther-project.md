@@ -48,37 +48,37 @@ The total input feature number was 4284. After regularization, only 549 features
 
 Here are the top 10 postive and negative coefficients.  
 Top 10 Positvie coefficients:  
-|Feature|Feature Type|Coef|  
+| Feature* | Feature Type | Coef |  
 | :--- | :--- | :--- |  
-|San Francisco|Location|7,929.03|  
-|Palo Alto|Location|4,483.74|  
-|New York City|Location|3,550.30|  
-|Senior|Title|3,507.37|  
-|Experience|Numerical Feature|3,355.35|  
-|President|Title|2,829.67|  
-|Head|Title|2,549.40|  
-|VP|Title|2,512.25|  
-|Employees|Numerical Feature|2,421.05|  
-|China|Company Tags|2,365.01|      
+| San Francisco | Location | 7,929.03 |  
+| Palo Alto | Location | 4,483.74 |  
+| New York City | Location | 3,550.30 |  
+| Senior | Title | 3,507.37 |  
+| Experience | Numerical Feature | 3,355.35 |  
+| President | Title | 2,829.67 |  
+| Head | Title | 2,549.40 |  
+| VP | Title | 2,512.25 |  
+| Employees | Numerical Feature | 2,421.05 |  
+| China | Company Tags | 2,365.01 |      
 Top 10 negative coefficients:  
 |Feature|Type|Coef|  
 | :--- | :--- | :--- |  
-|Berlin|Location|-3,459.27|  
-|Internship|Job Type|-3,415.45|  
-|Intern|Title|-3,305.03|  
-|Paris|Location|-3,020,05|  
-|1-10|Company Size|-2,677.14|  
-|Analyst|Title|-2,238.74|  
-|London|Location|-2,183.23|  
-|Bengaluru|Location|-2,006.16|  
-|Equity Higher Bound|Numeric Feature|-1,978.28|  
-|Bangkok|Location|-19.78.28|    
+| Berlin | Location | -3,459.27 |  
+| Internship | Job Type | -3,415.45 |  
+| Intern | Title | -3,305.03 |  
+| Paris | Location | -3,020,05 |  
+| 1-10| Company Size | -2,677.14 |  
+| Analyst | Title | -2,238.74 |  
+| London | Location | -2,183.23 |  
+| Bengaluru | Location | -2,006.16 |  
+| Equity Higher Bound | Numeric Feature | -1,978.28 |  
+| Bangkok | Location | -1,978.28 |    
 
 *All the feature were scaled. 
 
 ### Thoughts
 Though R2 at 0.64 was not good for a prediction model, the model has improved significately by addting all the text features. 
-A peek on the top positive and negative coeffients shows that jobs from large cities in US such as NYC, SF, and Palo Alto (also in Bay Area) tend to offer higher salaries. Senior or management position are also associate with higher salaries, while intern positiions usually don't pay well. These all agree with our common sense which incidates the model somehow makes sense.   
+A peek on the top positive and negative coeffients shows that jobs from large cities in US such as NYC, SF, and Palo Alto (also in Bay Area) tend to offer higher salaries. Senior or management/leader position are also associate with higher salaries, while intern positiions usually don't pay well. These all agree with our common sense which incidates the model somehow makes sense.   
 Interestingly, the model showed that European cities tend to offer lower salaries as well. I was surprised to see that and double checked to see if I converted the currency correctly. With the explaination by Vinny (our instructor) and some google search, it seems that this result is also valid. European country usually provide better benefits (low education cost, low healthcare cost), but lower in the net salaries.
 
 ### Next Steps

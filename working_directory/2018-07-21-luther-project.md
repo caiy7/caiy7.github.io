@@ -95,7 +95,10 @@ I so look forward to starting my next project at Metis.
 <img src ='../images/07212018/key_word.png'>
 (World cloud made from top positive coefficients)
 
-
+| Command | Description |
+| --- | --- |
+| `git status` | List all *new or modified* files |
+| `git diff` | Show file differences that **haven't been** staged |
 
 
 

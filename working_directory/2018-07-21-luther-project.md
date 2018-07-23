@@ -49,7 +49,7 @@ The total input feature number was 4284. After regularization, only 549 features
 Here are the top 10 postive and negative coefficients.  
 Top 10 Positvie coefficients:
 |Feature*|Feature Type|Coef|
-|---|---|---|
+|:---|:---|:---|
 |San Francisco|Location|7,929.03|
 |Palo Alto|Location|4,483.74|
 |New York City|Location|3,550.30|
@@ -62,7 +62,7 @@ Top 10 Positvie coefficients:
 |China|Company Tags|2,365.01|  
 Top 10 negative coefficients:
 |Feature*|Type|Coef|
-|---|---|---|
+|:--|:---|:---|
 |Berlin|Location|-3,459.27|
 |Internship|Job Type|-3,415.45|
 |Intern|Title|-3,305.03|
@@ -90,7 +90,7 @@ To further improve the model, here're a few things I can do in the future.
 5. Depending on the application, information like the equity offered with the job may or  not available for the predictino model. May want to remove it from the model
 
 The code and data are availabe at my [github](https://github.com/caiy7/Project_Luther). Thank you for reading and I hope it sounds like an interesting project to you.   
-I so look forward to staring my next project at Metis. 
+I so look forward to starting my next project at Metis. 
 
 <img src ='../images/07212018/key_word.png'>
 (World cloud made from top positive coefficients)

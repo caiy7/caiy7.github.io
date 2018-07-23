@@ -49,7 +49,7 @@ The total input feature number was 4284. After regularization, only 549 features
 Here are the top 10 postive and negative coefficients.  
 Top 10 Positvie coefficients:  
 |Feature|Feature Type|Coef|  
-|:---|:---|:---|  
+| :--- | :--- | :--- |  
 |San Francisco|Location|7,929.03|  
 |Palo Alto|Location|4,483.74|  
 |New York City|Location|3,550.30|  
@@ -62,7 +62,7 @@ Top 10 Positvie coefficients:
 |China|Company Tags|2,365.01|      
 Top 10 negative coefficients:  
 |Feature|Type|Coef|  
-|:---|:---|:---|  
+| :--- | :--- | :--- |  
 |Berlin|Location|-3,459.27|  
 |Internship|Job Type|-3,415.45|  
 |Intern|Title|-3,305.03|  

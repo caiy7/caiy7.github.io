@@ -46,8 +46,10 @@ R2 = 0.64
 RMSE = $24,1690.12  
 The total input feature number was 4284. After regularization, only 549 features remained.
 
-Here are the top 10 postive and negative coefficients.  
+Here are the top 10 postive and negative coefficients. 
+ 
 Top 10 Positvie coefficients:  
+
 | Feature* | Feature Type | Coef |  
 | :--- | :--- | :--- |  
 | San Francisco | Location | 7,929.03 |  
@@ -59,10 +61,12 @@ Top 10 Positvie coefficients:
 | Head | Title | 2,549.40 |  
 | VP | Title | 2,512.25 |  
 | Employees | Numerical Feature | 2,421.05 |  
-| China | Company Tags | 2,365.01 |      
+| China | Company Tags | 2,365.01 | 
+
 Top 10 negative coefficients:  
-|Feature|Type|Coef|  
-| :--- | :--- | :--- |  
+
+| Feature | Type | Coef |  
+| --- | :--- | :--- |  
 | Berlin | Location | -3,459.27 |  
 | Internship | Job Type | -3,415.45 |  
 | Intern | Title | -3,305.03 |  

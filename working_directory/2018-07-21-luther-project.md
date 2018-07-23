@@ -47,7 +47,7 @@ RMSE = $24,1690.12
 The total input feature number was 4284. After regularization, only 549 features remained.
 
 Here are the top 10 postive and negative coefficients.  
-Top 10 Positvie coefficients:
+Top 10 Positvie coefficients:  
 |Feature*|Feature Type|Coef|  
 |:---|:---|:---|  
 |San Francisco|Location|7,929.03|  
@@ -59,8 +59,8 @@ Top 10 Positvie coefficients:
 |Head|Title|2,549.40|  
 |VP|Title|2,512.25|  
 |Employees|Numerical Feature|2,421.05|  
-|China|Company Tags|2,365.01|    
-Top 10 negative coefficients:
+|China|Company Tags|2,365.01|      
+Top 10 negative coefficients:  
 |Feature*|Type|Coef|  
 |:--|:---|:---|  
 |Berlin|Location|-3,459.27|  
@@ -72,7 +72,7 @@ Top 10 negative coefficients:
 |London|Location|-2,183.23|  
 |Bengaluru|Location|-2,006.16|  
 |Equity Higher Bound|Numeric Feature|-1,978.28|  
-|Bangkok|Location|-19.78.28|  
+|Bangkok|Location|-19.78.28|    
 
 *All the feature were scaled. 
 

@@ -47,7 +47,7 @@ RMSE = $24,1690.12
 The total input feature number was 4284. After regularization, only 549 features remained.
 
 Here are the top 10 postive and negative coefficients. 
- 
+
 Top 10 Positvie coefficients:  
 
 | Feature* | Feature Type | Coef |  
@@ -65,8 +65,8 @@ Top 10 Positvie coefficients:
 
 Top 10 negative coefficients:  
 
-| Feature | Type | Coef |  
-| --- | :--- | :--- |  
+| Feature* | Type | Coef |  
+| :--- | :--- | :--- |  
 | Berlin | Location | -3,459.27 |  
 | Internship | Job Type | -3,415.45 |  
 | Intern | Title | -3,305.03 |  
@@ -99,10 +99,6 @@ I so look forward to starting my next project at Metis.
 <img src ='../images/07212018/key_word.png'>
 (World cloud made from top positive coefficients)
 
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
 
 
 

@@ -38,7 +38,7 @@ I added job skill requirement, job skill requirement, job title, job description
 #### Final Model
 I used following parameter for my final model:
 - Lasso
-- \lambda = 660
+- lambda = 660
 - maxfeature = 1000 (CountVecterizer)  
 
 **Test score on holdout test**  
@@ -48,31 +48,31 @@ The total input feature number was 4284. After regularization, only 549 features
 
 Here are the top 10 postive and negative coefficients.  
 Top 10 Positvie coefficients:
-|Feature*|Feature Type|Coef|
-|:---|:---|:---|
-|San Francisco|Location|7,929.03|
-|Palo Alto|Location|4,483.74|
-|New York City|Location|3,550.30|
-|Senior|Title|3,507.37|
-|Experience|Numerical Feature|3,355.35|
-|President|Title|2,829.67|
-|Head|Title|2,549.40|
-|VP|Title|2,512.25|
-|Employees|Numerical Feature|2,421.05|
-|China|Company Tags|2,365.01|  
+|Feature*|Feature Type|Coef|  
+|:---|:---|:---|  
+|San Francisco|Location|7,929.03|  
+|Palo Alto|Location|4,483.74|  
+|New York City|Location|3,550.30|  
+|Senior|Title|3,507.37|  
+|Experience|Numerical Feature|3,355.35|  
+|President|Title|2,829.67|  
+|Head|Title|2,549.40|  
+|VP|Title|2,512.25|  
+|Employees|Numerical Feature|2,421.05|  
+|China|Company Tags|2,365.01|    
 Top 10 negative coefficients:
-|Feature*|Type|Coef|
-|:--|:---|:---|
-|Berlin|Location|-3,459.27|
-|Internship|Job Type|-3,415.45|
-|Intern|Title|-3,305.03|
-|Paris|Location|-3,020,05|
-|1-10|Company Size|-2,677.14|
-|Analyst|Title|-2,238.74|
-|London|Location|-2,183.23|
-|Bengaluru|Location|-2,006.16|
-|Equity Higher Bound|Numeric Feature|-1,978.28|
-|Bangkok|Location|-19.78.28|
+|Feature*|Type|Coef|  
+|:--|:---|:---|  
+|Berlin|Location|-3,459.27|  
+|Internship|Job Type|-3,415.45|  
+|Intern|Title|-3,305.03|  
+|Paris|Location|-3,020,05|  
+|1-10|Company Size|-2,677.14|  
+|Analyst|Title|-2,238.74|  
+|London|Location|-2,183.23|  
+|Bengaluru|Location|-2,006.16|  
+|Equity Higher Bound|Numeric Feature|-1,978.28|  
+|Bangkok|Location|-19.78.28|  
 
 *All the feature were scaled. 
 

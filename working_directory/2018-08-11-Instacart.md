@@ -10,7 +10,7 @@ The original Kaggle competition asked to predcit what customer would purchase in
 
 ### Data
 The data can be downloaded from [Kaggle](https://www.kaggle.com/c/instacart-market-basket-analysis/data) directly. Here's a simple diagram on the tables in SQL format. I use AWS when working with the entire dataset. The t2.2xlarge instance worked ok most of hte time, except that for some merges, I had to delete some variables to free up the RAM. Pandas was used for data cleaning, feature engineering and training the model.    
-<img src= '../images/08112018/diagram.png'>
+<img src= '../images/08112018/diagram.jpg'>
 
 
 ### Features

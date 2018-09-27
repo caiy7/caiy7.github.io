@@ -9,8 +9,7 @@ This is a project adpated from the [Instacart Market Basket Analysis Competition
 The original Kaggle competition asked to predcit what customer would purchase in his next order, given the order history info. We  modified it by predicting whether he would reorder the products he had ordered in the past.
 
 ### Data
-The data can be downloaded from [Kaggle](https://www.kaggle.com/c/instacart-market-basket-analysis/data) directly. Here's a simple diagram on the tables in SQL format. I use AWS when working with the entire dataset. The t2.2xlarge instance worked ok most of hte time, except that for some merges, I had to delete some variables to free up the RAM. Pandas was used for data cleaning, feature engineering and training the model.    
-<img src= '../images/08112018/diagram.jpg'>
+The data can be downloaded from [Kaggle](https://www.kaggle.com/c/instacart-market-basket-analysis/data) directly. I use AWS when working with the entire dataset. The t2.2xlarge instance worked ok most of the time, except that for some merges, I had to delete some variables to free up the RAM. Pandas was used for data cleaning, feature engineering and training the model.    
 
 
 ### Features

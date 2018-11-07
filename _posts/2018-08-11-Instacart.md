@@ -35,14 +35,14 @@ After tuning, the average f1 score on 5-fold cross validation was 0.429 with ave
  The test f1 score was 0.401, lower than my expectation. It didn't seem like the model overfitted, as the AUC scores were the same. I plotted f1 score over the probability threshold. And it seems that the probability for the optimal f1 shifted, which caused decrease on the f1 score of the final test. This is probably because the subset data size is not large enough.   
  <img src='../images/08112018/f1_score_annotation.png'> 
 
- ### Discussion
+### Discussion
 
- #### Feature importance  
+#### Feature importance  
  To see what features contributed most to the model, I plotted the featuren importance in term of gain. Not surprisingly, the user-product specific features were the most important ones.   
  In fact, the first top 3 features contributed great predictive power. A scatter plot of feature on when was the last order the customer purchased the product and the feature on percentage of the orders containing the product showed some pattern of the targets. The histgram on average days between the orders containing the product also showed that with the longer gap between orders, the less likely the user would re-order. 
 <iframe src="https://public.tableau.com/views/mcnulty_features/Dashboard2?:embed=y&:display_count=yes" width="800" height="955"></iframe>
 
- #### Product type 
+#### Product type 
  Plot of reordering percentage of products by department or aisle revealed that product type matters. Products that don't last long or people consume on a daily or weekly basis have a higher reorder percentage, for example, fresh fruit and milk. Products that people can stock up on or products that people use only once in a while have lower reorder percentage.  
  <img src="../images/08112018/product_type.png">
 

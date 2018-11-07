@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Driven by the curiosity to discovery the stories behind the data, I am a trained biologist passionate about using machine learning skills to explore dataset and to solve practical problems, but not limited to research questions in biological science or healthcare. 
 
-### More Information
+### About this blog
 
-A place to include any other types of information that you'd like to include about yourself.
+I'll be using this blog to share my data science projects and any interesting discoveries from the projects. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[grace.cai@gmail.com](mailto:grace.cai@gmail.com)

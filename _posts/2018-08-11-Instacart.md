@@ -38,7 +38,7 @@ After tuning, the average f1 score on 5-fold cross validation was 0.437 with ave
 #### Feature importance  
  To see what features contributed most to the model, I plotted the featuren importance in term of gain. Not surprisingly, the user-product specific features were the most important ones.   
  In fact, the first top 3 features contributed great predictive power. A scatter plot of feature on when was the last order the customer purchased the product and the feature on percentage of the orders containing the product showed some pattern of the targets. The histgram on average days between the orders containing the product also showed that the longer gap between orders, the less likely the user would re-order. 
-<iframe src="https://public.tableau.com/views/mcnulty_features/Dashboard2?:embed=y&:display_count=yes" width="800" height="955"></iframe>
+<iframe src="https://public.tableau.com/views/mcnulty_features/Dashboard2?:showVizHome=no&:embed=true" width="800" height="955"></iframe>
 
 #### Product type 
  Plot of reordering percentage of products by department or aisle revealed that product type matters. Products that don't last long or people consume on a daily or weekly basis have a higher reorder percentage, for example, fresh fruit and milk. Products that people can stock up on or products that people use only once in a while have lower reorder percentage.  

@@ -97,7 +97,7 @@ The code and data are availabe at my [github](https://github.com/caiy7/Project_L
 I so look forward to starting my next project at Metis. 
 
 <img src ='../images/07212018/key_word.png'>
-(World cloud made from top positive coefficients)
+(Word cloud made from top positive coefficients)
 
 
 

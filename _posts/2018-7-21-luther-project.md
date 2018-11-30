@@ -78,7 +78,7 @@ Top 10 negative coefficients:
 | Equity Higher Bound | Numeric Feature | -1,978.28 |  
 | Bangkok | Location | -1,978.28 |    
 
-*All the feature were scaled. 
+*All features were scaled. 
 
 ### Thoughts
 Though R2 at 0.64 was not good for a prediction model, the model has improved significately by addting all the text features. 

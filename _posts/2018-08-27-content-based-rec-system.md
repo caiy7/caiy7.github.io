@@ -5,7 +5,7 @@ title: Content Based Movie Recommendation System
 
 Many of the recommendation systems we see today are based on the collaborative filtering approach, which makes recommendations based on the similarity in user tastes. The advantage of collaborative filtering is that it doesn't need content information. It "automatically" discovers the elements for recommendation based on users' behavior, like ratings or click-through rate. But the disadvantage of collaborative filtering is that it doesn't cope with new product as there's no data to start with. This is commonly called a cold start problem. In this case, content based movie recommendation could be a complement. 
 
-Content based recommendation system, self-explanatory by its name, is to provide recommendation based on the similarity in its content, which can be anything descriptive about the item. In this post, I will describe a movie recommendation system I built based on movie scripts and genre.   
+Content based recommendation system, self-explanatory by its name, is to provide recommendation based on the similarity in its content, which can be anything descriptive about the item. In this post, I will describe a movie recommendation system I built based on movie scripts and genre. Code available at my [Github Repo](https://github.com/caiy7/Project_Fletcher).  
 
 ### Get the data ready
 For movie content analysis, I decided to use movie script and I downloaded >1,000 movie scripts from [IMSDB](https://www.imsdb.com/).   

@@ -25,7 +25,7 @@ The NER from spaCy is powerful. It recognizes and categorizes quite a few differ
 ### TF-IDF Transformation
 To transform text into features that we can work with, I chose TF-IDF transformation. The general idea  of this transformation first get the vectorize each word in the text with its frequency (term frequency for tf) and then normalize it by the inverse of documnet-frequency - log of the inverse fraction of document that contains the word. It can be explained as the surprise of seeing the word in the document. This makes sense as the more specific information is more useful in describing a project. The default tf-idf implementation in scikit-learn is shown below. 1 is added to the numerator and denominator to avoid division by zero. 1 is added to the whole idf term to avoid getting 0 idf when a word occurs in all documents in the training corpus. 
 
-$$tf_t\log(\frac{1 + N}{1 + n_t} + 1 )$$
+$$tf_t\times\log(\frac{1 + N}{1 + n_t} + 1 )$$
 
 Tf-idf uses parameter `max_df` and `min_df` to set the range of document-frequency when building the vocabulary. I choses `max_df=0.7` to ignore totally words that occure in more than 70% of the scripts instead of just weight them down by idf. To avoid some rare words or words that specific to movie sequels, I set `min_df=20`. 
 

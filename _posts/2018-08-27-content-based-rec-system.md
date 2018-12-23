@@ -1,5 +1,7 @@
 ---
 layout: post
+mathjax: true
+comments: true
 title: Content Based Movie Recommendation System
 ---
 

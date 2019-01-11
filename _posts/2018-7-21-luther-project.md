@@ -88,10 +88,12 @@ Interestingly, the model showed that European cities tend to offer lower salarie
 ### Next Steps
 To further improve the model, here're a few things I can do in the future.   
 1. Include more data to train the model
-2. Try TfidefVectorizer, building matrices on word frequency instead of counts to give more weigths to those words with lower occurrence but have higher predictive power.
-3. Look up a few examples to understand where the prediction errors are from and improve the model based on this knowledge
-4. It is likely that the relation between the target and feature are not linear. Try Nonlinear models, like random forest to see if they perform better.  
-5. Depending on the application, information like the equity offered with the job may or  not available for the predictino model. May want to remove it from the model
+2. Look up a few examples to understand where the prediction errors are from and improve the model based on this knowledge
+3. It is likely that the relation between the target and feature are not linear. Try Nonlinear models, like random forest to see if they perform better.  
+4. Depending on the application, information like the equity offered with the job may or  not available for the predictino model. May want to remove it from the model.
+
+I've also thought of using TfidfVectorizer instead of CountVectorizer to extract the text features. Since the advantage of Tfidf is to normalize words with inverse document frequency, which can be captured in the model itself, I doubt it will improve the model in this case. 
+
 
 The code and data are availabe at my [github](https://github.com/caiy7/Project_Luther). Thank you for reading and I hope it sounds like an interesting project to you.   
 I so look forward to starting my next project at Metis. 

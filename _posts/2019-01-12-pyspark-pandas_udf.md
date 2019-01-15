@@ -46,7 +46,7 @@ We can use the Pandas UDF `demean` with `withColumn` to add a new column of `dem
 df_demean = df.withColumn('demeaned_rating', demean('rating'))
 ```
 And here's the result:
-<img src="../images/20190112/demean_res.png">
+<img src="../images/20190112/demean_res.png" width="470" height="272">
 
 #### Grouped Map 
 You might not be convinced about the power of Pandas UDF yet, but the grouped map may change your mind.  
@@ -71,7 +71,7 @@ Apply the function with `groupBy`:
 df_user_demean = df.groupBy('userId').apply(demean_user)
 ```
 Here's the result:
-<img src="../images/20190112/user_demean_res.png">
+<img src="../images/20190112/user_demean_res.png" width="525" height="284">
 
 #### More Grouped Map Example
 

@@ -6,7 +6,7 @@ This is a project adpated from the [Instacart Market Basket Analysis Competition
 
 ### Scope
 
-The original Kaggle competition asked to predcit what customer would purchase in his next order, given the order history info. We  modified it by predicting whether he would reorder the products he had ordered in the past.
+The original Kaggle competition asked to predcit what product a customer would purchase in the next order, given the order history info. The problem was modified to predict whether he would reorder anuy products he had ordered in the past.
 
 ### Data
 The data can be downloaded from [Kaggle](https://www.kaggle.com/c/instacart-market-basket-analysis/data) directly. I used AWS t2.2xlarge instance when working with the entire dataset.    
@@ -26,14 +26,18 @@ Model Selection was performed on a subset of data (~6.3% of the total data) on l
 
 To evaluate the model, I chose F1 score as the metrics. I would like to catch the correct products as many as I can, but at the same time, I don't want to overwhelm the users by recommending products they are not interested in. F1 score provides the balance on the trade off between recall and precision.  
 
-I tried Logistic Regression, Random Forest and Gradient Boosting. Gradient Boosting gave slightly better result. When using Logistic Regression, all categorical features were converted to dummie variables. Polynomial features, log tranformed features and different strength of regularization were also tested under Logistic Regression.  
+A comparison among Logistic Regression, Random Forest and Gradient Boosting showed that Gradient Boosting performed slightly better. When using Logistic Regression, all categorical features were converted to dummie variables. Polynomial features, log tranformed features and different strength of regularization were also tested under Logistic Regression.  
 
 After tuning, the average f1 score on 5-fold cross validation was 0.437 with average adjusted probability threshold at 0.2114. 
 
 ### Final Model and Testing
- Then I moved to AWS to train the final model and tested on a holdout set with 20,000 orders. The test f1 score was 0.436. 
+ Then I moved to AWS EC2 to train the final model and tested on a holdout set with 20,000 orders. The test f1 score was 0.436. 
 
 ### Discussion
+#### Feature Engineering
+The raw dataset comes with very limited number of features to work with. Creating new features with predictive power makes the difference between success and failure here. Although tree based models can automatically take care of feature interactions, features with summary statistics may help improve the model accuarcy. 
+
+To deal with the categorial features like the department and aisle info, I used something similar to target encoding or bin counting in this project. I caculated the probablies of reorder and no reorder accross the department or aisles and binned the diffference in the probabilities between reorder and no reorder in each category. The advantage of this technique over one hot encoder is that it avoids creating additional features for each category and summarizes target statistics. Since I used only prior order info to create these features, I don't need to worry about data leaky due to the data separation.
 
 #### Feature importance  
  To see what features contributed most to the model, I plotted the featuren importance in term of gain. Not surprisingly, the user-product specific features were the most important ones.   

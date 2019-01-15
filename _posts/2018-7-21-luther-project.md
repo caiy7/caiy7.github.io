@@ -3,47 +3,48 @@ layout: post
 title: Use Linear Regression Model to Predict Salaries from Start Up Companies
 ---
 
-It's the 3rd week at Metis and my second project (code "Luther") - build linear regression model on information obtained from webpages. I though it would cool if I cool if I could build a model to predict salaries from the information about the job and the company, since i will be in the market two and a half months later. 
-
-### SCOPE
-Predicting salaries of jobs posted, focusing small-mid size start-up company. 
+When I saw the estimated salaries feature on the job post from Glassdoor, I though it would cool if I could do something simiar: to build a model to predict salaries and to gain insights on the factors that impact salaries. And I did it.
 
 ### DATA
-I scraped around 1900 job posts from around 900 companies from [Angel List](https://angel.co) using Selinium and BeutifulSoup. 
+Around 1900 job posts from around 900 companies from [AngelList](https://angel.co) were scaped using Selinium and BeutifulSoup. 
 
-After removing outliers or records that were out of scope of this project, eg. jobs from companies with over>500 people, I had a final data set of 1601 records. Each record has numeric features like requirement in minimal experience, number of currently employees, number of job openings in the company; a few simple categorical features, such as visa support, 401k, minimal degree requirement and etc. In addition to that, I also have some features in pure text, which will need NLP prepross before incorport them in the model. 
+After clean up, I had a final data set of 1601 records. Some of the features are listed below: 
+- **numeric features:**   
+minimal experience requirement, number of currently employees, number of job openings in the company and etc.
+- **categorical features:**   
+visa support, 401k, minimal degree requirement and etc.
+- **text features:**  
+title, job description, skills requirement, company product info and etc.
+
+The text features needs further process before they can be incorporated in the model. 
 
 ### MODEL SELECTION
-Pairplot on the numeric feature didn't show apparent correlation between the target and any of the numberic feature. Thus I decided to build a simple linear regression model on all the numeric features and the simple categorical features as the baseline. There features included 401k, minimal experience requirement, insurance, stocked kitchen, visa, employee number, investor number, job opening number, minimal degree requirement, company size, equity, job types(Full time, intern and etc.) 
+Pairplot on the numeric features didn't show any obvious correlation between the target and the features. To start with, I built a simple linear regression model using all the numeric features and the categorical features as the baseline. The features included 401k, minimal experience requirement, insurance, stocked kitchen, visa, employee number, investor number, job opening number, minimal degree requirement, company size, equity, job types(full time, intern and etc.) 
 
-I took out 15% of the records as holdout set and all the following models were reported via cross validation with cv=5. 
+15% of the data were set aside as holdout set and  cross validation with cv=5 was performed on the rest of the data. 
 
 
-The initial model gave an R2 of 0.20 and RMSE of $34,882.80, which is far from ideal. The distribution of residual were approximately symmetrical, indicating that adding polynomial might not help.   
+The baseline model gave an R2 of 0.20 and RMSE of $34,882.80, which was far from ideal. The distribution of residuals are roughly symmetrical, implying that adding polynomial terms might not improve the model significantly.
 <img src = '../images/07212018/baseline_residual.png'>  
 
-Then I tried log transform of the numerical features which showed a little improvement. And adding interaction between the features didn't help at all.
+I also tried log transformation of features and adding interactions, but the model was not improved. 
 
-Regularization of the above models didn't improve the R2, indicating that there's more bias in the model than variance. 
+Intuitively, location of the job should have some predictive power. Expensive cities tend to offer higher salaries to attract candidates. As location is a categorical feature with high cardinality, I added regularization to the model in order to avoid overfitting. The R2 of the model was then improved to around 0.36 after adding location to the model. This was encouraging.
 
-I decided to incorporate the rest features sequencially to the model. 
+To process the pure text features, I used the feature extraction tool - CountVectorizer from scikit-learn. It converts a collection of documents into vectors of word counts, which can be used as features in the regression model. Adding those text features did improved the model significantly.   
 
-Intuitively, location of the should have some predictive power. Expensive cities usually offer higher salar. This added around more features to the model. After regularization, the R2 of the model improved to around 0.36. 
-
-This was encouraging. I decided to incorporate features like skill requirement, job title, job descripton and ect. As the values in those features didn't fall into a few categories, I used the CountVectorizer tool from scikit-learn to transform the text information into matrices of counts of words for the linear regression model. 
-
-I added job skill requirement, job skill requirement, job title, job description, company segmentation and company product information sequencentially. Incorporating those features inceased the R2 of my model gradually. And in all the cross validation test, Lasso perfermed better than Ridge in terms of R2.
 
 ### RESULT
-#### Final Model
-I used following parameter for my final model:
+In my final model, the R2 was about 3 fold of the baseline model and the RMSE decrease by more than 10k. 
+
+**Model hyperparameters:**
 - Lasso
 - lambda = 660
-- maxfeature = 1000 (CountVecterizer)  
+- maxfeature = 1000 (CountVectorizer)  
 
 **Test score on holdout test**  
-R2 = 0.64  
-RMSE = $24,1690.12  
+- R2 = 0.64  
+- RMSE = $24,1690.12  
 The total input feature number was 4284. After regularization, only 549 features remained.
 
 Here are the top 10 postive and negative coefficients. 
@@ -81,22 +82,23 @@ Top 10 negative coefficients:
 *All features were scaled. 
 
 ### Thoughts
-Though R2 at 0.64 was not good for a prediction model, the model has improved significately by addting all the text features. 
-A peek on the top positive and negative coeffients shows that jobs from large cities in US such as NYC, SF, and Palo Alto (also in Bay Area) tend to offer higher salaries. Senior or management/leader position are also associate with higher salaries, while intern positiions usually don't pay well. These all agree with our common sense which incidates the model somehow makes sense.   
-Interestingly, the model showed that European cities tend to offer lower salaries as well. I was surprised to see that and double checked to see if I converted the currency correctly. With the explaination by Vinny (our instructor) and some google search, it seems that this result is also valid. European country usually provide better benefits (low education cost, low healthcare cost), but lower in the net salaries.
+Though R2 at 0.64 was not ideal for a prediction model, the model has improved significately by addting all the text features.  
+#### What impacts salary
+A peek on the top positive and negative coeffients shows that **location** plays an important role. Large cities in US such as NYC, SF, and Palo Alto (also in Bay Area) have high positive coefficients, implying that jobs in those cities tend to offer higher salaries. To my surprise, jobs in large European cities such as Berlin, London, Paris pay less according to the model. After double checking on currency conversion and some google search, I figured out that European countries in general pay lower in net salaries, but offer better social benefits, such as low education cost and low healthcare cost. 
+
+**Title** is also an important predictor for salaries. Words like senior or words indicating management level position such as president, VP have positive impact on salaries, while having "inten" in the title usually indicates a lower salary.
+
+We can see that other factors like work experience, company size, affect salaries as well. 
+
 
 ### Next Steps
-To further improve the model, here're a few things I can do in the future.   
+To further improve the model, here're a few things I would like to try in the future.   
 1. Include more data to train the model
-2. Look up a few examples to understand where the prediction errors are from and improve the model based on this knowledge
-3. It is likely that the relation between the target and feature are not linear. Try Nonlinear models, like random forest to see if they perform better.  
-4. Depending on the application, information like the equity offered with the job may or  not available for the predictino model. May want to remove it from the model.
+2. Look up a few examples to understand where the prediction errors are from and try to improve the model based on this knowledge
+3. It is likely there are nonlinear relationship between the features and the target. Try Nonlinear models, like random forest to see if they perform better.  
+4. Depending on the application, information like the equity offered with the job may or may not available for the prediction model. May want to remove it from the model.
 
-I've also thought of using TfidfVectorizer instead of CountVectorizer to extract the text features. Since the advantage of Tfidf is to normalize words with inverse document frequency, which can be captured in the model itself, I doubt it will improve the model in this case. 
-
-
-The code and data are availabe at my [github](https://github.com/caiy7/Project_Luther). Thank you for reading and I hope it sounds like an interesting project to you.   
-I so look forward to starting my next project at Metis. 
+The codes and data are availabe at my [Github Repo](https://github.com/caiy7/Project_Luther). Thank you for reading and I hope it sounds like an interesting project to you.   
 
 <img src ='../images/07212018/key_word.png'>
 (Word cloud made from top positive coefficients)

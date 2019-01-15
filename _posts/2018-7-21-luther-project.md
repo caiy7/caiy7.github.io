@@ -9,11 +9,11 @@ When I saw the estimated salaries feature on the job post from Glassdoor, I thou
 Around 1900 job posts from around 900 companies from [AngelList](https://angel.co) were scaped using Selinium and BeutifulSoup. 
 
 After clean up, I had a final data set of 1601 records. Some of the features are listed below: 
-- **numeric features:**   
+- **Numerical Features:**   
 minimal experience requirement, number of currently employees, number of job openings in the company and etc.
-- **categorical features:**   
+- **Categorical Features:**   
 visa support, 401k, minimal degree requirement and etc.
-- **text features:**  
+- **Text Features:**  
 title, job description, skills requirement, company product info and etc.
 
 The text features needs further process before they can be incorporated in the model. 

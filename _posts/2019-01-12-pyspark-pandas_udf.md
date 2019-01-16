@@ -97,7 +97,8 @@ def istest(df):
     return df
 
 # apply pandas udf
-df_with_ind = df.groupBy('userId').apply(istest)
+# as the function is nondeterministic, use cache to preserve the result
+df_with_ind = df.groupBy('userId').apply(istest).cache()
 
 # split dataset according to the 'istest' column
 train = df_with_ind.filter('istest=0')
